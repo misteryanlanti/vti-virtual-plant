@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "X-502_离子交换柱"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "X-502_离子交换柱",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "X-502.bin",
+   "byteLength": 117936
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 50544,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 50544,
+   "byteLength": 50544,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 101088,
+   "byteLength": 16848,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 4212,
+   "type": "VEC3",
+   "min": [
+    -1.4,
+    -0.4,
+    -0.4
+   ],
+   "max": [
+    1.4,
+    3.8,
+    0.4
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 4212,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 4212,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

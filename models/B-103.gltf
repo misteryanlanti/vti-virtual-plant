@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "B-103_圆锥破碎机"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "B-103_圆锥破碎机",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "B-103.bin",
+   "byteLength": 21168
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 9072,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 9072,
+   "byteLength": 9072,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 18144,
+   "byteLength": 3024,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 756,
+   "type": "VEC3",
+   "min": [
+    -2.2,
+    0,
+    -2.2
+   ],
+   "max": [
+    2.2,
+    4.4,
+    3.6
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 756,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 756,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

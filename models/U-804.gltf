@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "U-804_管廊泵组"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "U-804_管廊泵组",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "U-804.bin",
+   "byteLength": 50736
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 21744,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 21744,
+   "byteLength": 21744,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 43488,
+   "byteLength": 7248,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 1812,
+   "type": "VEC3",
+   "min": [
+    -22.12,
+    0.0,
+    -0.8
+   ],
+   "max": [
+    22.0,
+    4.414126781955418,
+    44.6
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 1812,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 1812,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

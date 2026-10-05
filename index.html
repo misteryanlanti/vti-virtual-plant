@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>钒渣提钒制V₂O₅ 三维虚拟仿真工厂</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:100%;height:100%;overflow:hidden;background:#000;font-family:"Microsoft YaHei",sans-serif}
+#c{position:absolute;inset:0}
+#ui{position:absolute;inset:0;pointer-events:none;z-index:10}
+#ui>div{pointer-events:auto}
+#topbar{position:absolute;top:0;left:0;right:0;height:48px;z-index:20;background:linear-gradient(90deg,#0d1b3e,#132655);border-bottom:2px solid #2a5bb8;display:flex;align-items:center;padding:0 16px;gap:14px}
+#topbar .logo{width:32px;height:32px;border-radius:6px;background:linear-gradient(135deg,#4472C4,#63b3ed);display:flex;align-items:center;justify-content:center;font-weight:bold;color:#fff;font-size:16px}
+#topbar h1{color:#fff;font-size:16px;font-weight:600}
+#topbar .sub{color:#7fb3ff;font-size:11px}
+#topbar .kpi{margin-left:auto;display:flex;gap:12px}
+.kpi-item{text-align:center;color:#fff}
+.kpi-item .v{font-size:15px;font-weight:bold;color:#63d2ff}
+.kpi-item .l{font-size:9px;color:#9db8e8}
+#left{position:absolute;left:10px;top:56px;width:220px;z-index:15;background:rgba(13,27,62,.9);border:1px solid #2a5bb8;border-radius:8px;padding:12px;max-height:calc(100vh - 80px);overflow-y:auto}
+#left h3{color:#63b3ed;font-size:13px;margin:8px 0 4px}
+.btn{display:block;width:100%;padding:7px;margin:3px 0;border:none;border-radius:5px;cursor:pointer;background:#1a3568;color:#d6e5ff;font-size:12px;text-align:left}
+.btn:hover{background:#2a5bb8}
+.btn.active{background:#4472C4;color:#fff}
+.btn .b{float:right;font-size:9px;background:rgba(255,255,255,.15);padding:1px 5px;border-radius:6px}
+#fault-input{width:100%;padding:6px;margin:4px 0;background:#0d1b3e;border:1px solid #2a5bb8;border-radius:5px;color:#d6e5ff;font-size:12px}
+#data{position:absolute;right:10px;top:56px;width:300px;z-index:15;background:rgba(13,27,62,.92);border:1px solid #2a5bb8;border-radius:8px;padding:12px;max-height:calc(100vh - 200px);overflow-y:auto}
+#data h3{color:#63b3ed;font-size:13px;display:flex;align-items:center;gap:6px}
+#data h3 .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84}
+#eq-title{font-size:16px;color:#fff;font-weight:bold;margin:6px 0 2px}
+#eq-tag{color:#63b3ed;font-size:12px;font-weight:bold}
+#eq-sec{color:#9db8e8;font-size:10px}
+.ptable{width:100%;border-collapse:collapse;margin-top:8px}
+.ptable td{padding:4px 6px;font-size:11px;color:#d6e5ff;border-bottom:1px solid #1a3568}
+.ptable td:first-child{color:#9db8e8;width:45%}
+.ptable td:last-child{text-align:right;font-family:Consolas,monospace;color:#63d2ff;font-weight:bold}
+#alert{margin-top:8px;padding:8px;border-radius:5px;background:#3d1a1a;border:1px solid #b83030;color:#ffb3b3;font-size:12px;display:none}
+#alert.show{display:block;animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 8px rgba(184,48,48,.4)}50%{box-shadow:0 0 20px rgba(184,48,48,.8)}}
+#alarm{position:absolute;bottom:8px;left:240px;right:320px;height:56px;z-index:15;background:rgba(13,27,62,.85);border:1px solid #2a5bb8;border-radius:6px;padding:8px 12px;overflow:hidden}
+#alarm h4{color:#63b3ed;font-size:10px;margin-bottom:2px}
+#alarm-list{font-size:11px;color:#d6e5ff;line-height:1.5}
+#alarm-list .a{color:#ff8a8a}
+#hint{position:absolute;top:52px;left:50%;transform:translateX(-50%);z-index:15;background:rgba(13,27,62,.9);border:1px solid #2a5bb8;border-radius:16px;padding:5px 16px;color:#ffd54f;font-size:12px}
+#load{position:fixed;inset:0;z-index:100;background:#0a1428;display:flex;flex-direction:column;align-items:center;justify-content:center;color:#63d2ff;font-size:16px}
+#load .spin{width:44px;height:44px;border:4px solid #1a3568;border-top-color:#4472C4;border-radius:50%;animation:spin 1s linear infinite;margin-bottom:16px}
+@keyframes spin{to{transform:rotate(360deg)}}
+.elabel{position:absolute;pointer-events:none;z-index:8}
+.elabel .t{background:#0d1b3e;border:1px solid #4472C4;border-radius:3px;padding:1px 5px;color:#63d2ff;font-size:10px;font-weight:bold;white-space:nowrap}
+/* ---- 仪表面板 ---- */
+.isec{margin-top:9px;border-top:1px solid #1a3568;padding-top:6px}
+.isec .h{color:#ffd54f;font-size:11px;font-weight:bold;margin-bottom:4px}
+.itab{width:100%;border-collapse:collapse;font-size:10px}
+.itab td{padding:2px 4px;border-bottom:1px solid #14294d;color:#cfe3f5}
+.itab td.i0{color:#63d2ff;font-weight:bold;white-space:nowrap}
+.itab td.i1{color:#9db8e8;font-size:9px}
+.itab td.i2{text-align:right;font-family:Consolas,monospace;color:#7fffa8;font-weight:bold;white-space:nowrap}
+.itab td.i2.a{color:#ff8a8a}
+.itab tr.act{background:#2a1414}
+.sisbox{margin-top:6px;padding:6px;border-radius:4px;background:#2a1414;border:1px solid #b83030;
+font-size:10px;color:#ffb3b3;line-height:1.5;display:none}
+.sisbox.on{display:block}
+.sisbox .st{font-weight:bold;color:#ff6666}
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div id="ui">
+<div id="topbar">
+  <div class="logo">钒</div>
+  <div><h1>钒渣提钒制V₂O₅ 虚拟仿真工厂</h1><div class="sub">钠化焙烧 · 酸浸 · 萃取 · 沉钒 · 煅烧 — 年产500吨</div></div>
+  <div class="kpi">
+    <div class="kpi-item"><div class="v">36</div><div class="l">设备</div></div>
+    <div class="kpi-item"><div class="v">8</div><div class="l">工段</div></div>
+    <div class="kpi-item"><div class="v" id="kpi-st">正常</div><div class="l">状态</div></div>
+  </div>
+</div>
+<div id="left">
+  <h3>操作模式</h3>
+  <button class="btn active" id="btn-walk">🚶 第一人称漫游 <span class="b">WASD</span></button>
+  <button class="btn" id="btn-visit">🎥 自动巡览 <span class="b">8站</span></button>
+  <button class="btn" id="btn-orbit">🖱 自由视角 <span class="b">拖拽</span></button>
+  <h3>故障演练</h3>
+  <input id="fault-input" placeholder="输入故障：焙烧超温/沉钒pH失控…" />
+  <button class="btn" id="btn-fault">⚠ 触发故障</button>
+  <button class="btn" id="btn-reset">↺ 全厂复位</button>
+  <h3>工段跳转</h3>
+  <button class="btn jz" data-z="raw">① 原料磨矿</button>
+  <button class="btn jz" data-z="roast">② 钠化焙烧</button>
+  <button class="btn jz" data-z="leach">③ 浸出分离</button>
+  <button class="btn jz" data-z="ext">④ 萃取净化</button>
+  <button class="btn jz" data-z="precip">⑤ 沉钒</button>
+  <button class="btn jz" data-z="calc">⑥ 煅烧成品</button>
+  <button class="btn jz" data-z="env">⑦ 环保公辅</button>
+  <h3>仪表系统</h3>
+  <button class="btn" id="btn-hmi">🖥 DCS 操作站（HMI）</button>
+  <button class="btn" id="btn-instr">📡 三维仪表点位</button>
+  <h3>运转与剖面</h3>
+  <button class="btn active" id="btn-motion">⚙ 设备运转</button>
+  <button class="btn" id="btn-speed">⏩ 转速 ×1</button>
+  <button class="btn active" id="btn-flow">➤ 物料流向</button>
+  <button class="btn" id="btn-section">🔪 剖切看内部</button>
+  <h3>显示</h3>
+  <button class="btn" id="btn-xray">👁 透明外壳</button>
+  <button class="btn" id="btn-labels">🏷 设备标签</button>
+  <button class="btn" id="btn-slow">🐢 慢速行走</button>
+</div>
+<div id="data">
+  <h3><span class="dot" id="dot"></span> 实时工况</h3>
+  <div id="eq-title">未选择设备</div>
+  <div id="eq-tag">—</div>
+  <div id="eq-sec">走近设备或点击面板选择</div>
+  <table class="ptable" id="ptable"></table>
+  <div id="alert"></div>
+  <div id="inst-sec"></div>
+  <div id="sis-sec"></div>
+</div>
+<div id="alarm"><h4>DCS 活动报警</h4><div id="alarm-list">无活动报警</div></div>
+<div id="hint">点击画面进入漫游 · WASD移动 · Shift加速 · 鼠标环视</div>
+</div>
+<div id="load"><div class="spin"></div><span id="load-text">正在构建三维工厂…</span></div>
+
+<script src="lib/three.min.js"></script>
+<script src="lib/OrbitControls.js"></script>
+<script src="equipment_data.js"></script>
+<script src="instrument_data.js"></script>
+<script src="lib/equip_builders.js"></script>
+<script src="lib/pipes.js"></script>
+<script src="lib/instrument_builders.js"></script>
+<script src="lib/scene_env.js"></script>
+<script src="lib/player.js"></script>
+<script src="lib/hmi.js"></script>
+<script src="factory.js"></script>
+</body>
+</html>

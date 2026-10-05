@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "F-304_真空带式过滤机"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "F-304_真空带式过滤机",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "F-304.bin",
+   "byteLength": 15456
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 6624,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 6624,
+   "byteLength": 6624,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 13248,
+   "byteLength": 2208,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 552,
+   "type": "VEC3",
+   "min": [
+    -1.15,
+    0.4,
+    -4.55
+   ],
+   "max": [
+    0.9,
+    1.5,
+    8.0
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 552,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 552,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

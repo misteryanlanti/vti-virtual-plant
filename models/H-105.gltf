@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "H-105_分级旋流器组"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "H-105_分级旋流器组",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "H-105.bin",
+   "byteLength": 87024
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 37296,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 37296,
+   "byteLength": 37296,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 74592,
+   "byteLength": 12432,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 3108,
+   "type": "VEC3",
+   "min": [
+    -3.8,
+    0.0,
+    -0.4
+   ],
+   "max": [
+    3.8,
+    3.6,
+    0.4
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 3108,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 3108,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

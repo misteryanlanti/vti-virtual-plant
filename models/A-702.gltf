@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "A-702_氨回收塔"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "A-702_氨回收塔",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "A-702.bin",
+   "byteLength": 26544
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 11376,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 11376,
+   "byteLength": 11376,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 22752,
+   "byteLength": 3792,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 948,
+   "type": "VEC3",
+   "min": [
+    -0.8,
+    -0.6,
+    -0.7918571535047463
+   ],
+   "max": [
+    1.15,
+    7.6,
+    0.7918571535047463
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 948,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 948,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

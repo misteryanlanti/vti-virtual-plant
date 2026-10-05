@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "E-401_萃取混合澄清槽"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "E-401_萃取混合澄清槽",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "E-401.bin",
+   "byteLength": 22176
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 9504,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 9504,
+   "byteLength": 9504,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 19008,
+   "byteLength": 3168,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 792,
+   "type": "VEC3",
+   "min": [
+    -0.9,
+    0.0,
+    -0.8
+   ],
+   "max": [
+    8.9,
+    3.3000000000000003,
+    4.3999999999999995
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 792,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 792,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

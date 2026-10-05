@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "K-202_钠化焙烧回转窑"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "K-202_钠化焙烧回转窑",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "K-202.bin",
+   "byteLength": 165312
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 70848,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 70848,
+   "byteLength": 70848,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 141696,
+   "byteLength": 23616,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 5904,
+   "type": "VEC3",
+   "min": [
+    -2.5,
+    0.0,
+    -12.799999999999999
+   ],
+   "max": [
+    2.5,
+    9.2,
+    12.2
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 5904,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 5904,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}

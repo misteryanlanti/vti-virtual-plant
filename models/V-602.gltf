@@ -1,0 +1,107 @@
+{
+ "asset": {
+  "version": "2.0",
+  "generator": "gltfkit.py"
+ },
+ "scene": 0,
+ "scenes": [
+  {
+   "nodes": [
+    0
+   ]
+  }
+ ],
+ "nodes": [
+  {
+   "mesh": 0,
+   "name": "V-602_成品振动筛"
+  }
+ ],
+ "meshes": [
+  {
+   "name": "V-602_成品振动筛",
+   "primitives": [
+    {
+     "attributes": {
+      "POSITION": 0,
+      "NORMAL": 1
+     },
+     "indices": 2,
+     "mode": 4,
+     "material": 0
+    }
+   ]
+  }
+ ],
+ "buffers": [
+  {
+   "uri": "V-602.bin",
+   "byteLength": 18480
+  }
+ ],
+ "bufferViews": [
+  {
+   "buffer": 0,
+   "byteOffset": 0,
+   "byteLength": 7920,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 7920,
+   "byteLength": 7920,
+   "target": 34962
+  },
+  {
+   "buffer": 0,
+   "byteOffset": 15840,
+   "byteLength": 2640,
+   "target": 34963
+  }
+ ],
+ "accessors": [
+  {
+   "bufferView": 0,
+   "componentType": 5126,
+   "count": 660,
+   "type": "VEC3",
+   "min": [
+    -0.8,
+    0.0,
+    -0.8
+   ],
+   "max": [
+    0.8,
+    1.65,
+    0.8
+   ]
+  },
+  {
+   "bufferView": 1,
+   "componentType": 5126,
+   "count": 660,
+   "type": "VEC3"
+  },
+  {
+   "bufferView": 2,
+   "componentType": 5125,
+   "count": 660,
+   "type": "SCALAR"
+  }
+ ],
+ "materials": [
+  {
+   "name": "default",
+   "pbrMetallicRoughness": {
+    "baseColorFactor": [
+     0.7,
+     0.7,
+     0.72,
+     1.0
+    ],
+    "metallicFactor": 0.3,
+    "roughnessFactor": 0.6
+   }
+  }
+ ]
+}
